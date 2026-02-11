@@ -4,32 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>メッセージ - お誕生日企画2025</title>
-    <link rel="stylesheet" href="message-style.css">
+    <link rel="stylesheet" href="/css/message-style.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/turn.js/3/turn.min.js"></script>
 </head>
 <body>
     <!-- ヘッダー -->
-    <header class="header">
-        <div class="container">
-            <div class="logo">
-                <h1>メッセージ</h1>
-            </div>
-            <button class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <nav class="nav" id="nav">
-                <ul>
-                    <li><a href="index.html">トップ</a></li>
-                    <li><a href="message.html">メッセージ</a></li>
-                    <li><a href="#illustration">イラスト</a></li>
-                    <li><a href="#info">インフォ</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <div id="header"></div>
 
     <!-- メインコンテンツ -->
     <main class="main-content">
@@ -183,12 +164,9 @@
     </main>
 
     <!-- フッター -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 お誕生日企画. All rights reserved.</p>
-        </div>
-    </footer>
+    <div id="footer"></div>
 
-    <script src="message-script.js"></script>
+    <script src="js/include.js"></script>
+    <script src="js/message-script.js"></script>
 </body>
 </html>
