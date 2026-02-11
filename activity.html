@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>蓮ノ空女学院スクールアイドルクラブ　103期生卒業企画</title>
+    <link rel="stylesheet" href="./css/message-style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/turn.js/3/turn.min.js"></script>
+</head>
+<body>
+    <!-- ヘッダー -->
+    <div id="header"></div>
+
+    <!-- メインコンテンツ -->
+    <main class="main-content">
+        <div class="book-container">
+            <!-- ページコントロール -->
+            <div class="page-controls">
+                <button id="prev-btn" class="control-btn">← 前へ</button>
+                <div class="page-input-wrapper">
+                    <input type="number" id="page-input" min="1" placeholder="ページ番号">
+                    <span id="total-pages"></span>
+                </div>
+                <button id="next-btn" class="control-btn">次へ →</button>
+            </div>
+
+            <!-- 本 -->
+            <div id="flipbook">
+                <!-- 表紙 -->
+                <div class="page cover">
+                    <div class="page-content">
+                        <h2>お祝いメッセージ集</h2>
+                        <p class="subtitle">2025</p>
+                        <div class="cover-decoration">
+                            <img src="https://via.placeholder.com/300x300/FF69B4/FFFFFF?text=Cover" alt="表紙">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- メッセージページ1 -->
+                <div class="page">
+                    <div class="page-content">
+                        <div class="message-card">
+                            <div class="message-decoration">
+                                <img src="images/d.png" alt="装飾">
+                            </div>
+                            <div class="message-decoration">
+                                <img src="images/e.png" alt="装飾">
+                            </div>
+                            <div class="message-decoration">
+                                <img src="images/f.png" alt="装飾">
+                            </div>
+                        </div>
+                        <div class="page-number">1</div>
+                    </div>
+                </div>
+
+                <!-- メッセージページ2 -->
+                <div class="page">
+                    <div class="page-content">
+                        <div class="message-card">
+                            <div class="message-decoration">
+                                <img src="images/a.png" alt="装飾">
+                            </div>
+                            <div class="message-decoration">
+                                <img src="images/b.png" alt="装飾">
+                            </div>
+                            <div class="message-decoration">
+                                <img src="images/c.png" alt="装飾">
+                            </div>
+                        </div>
+                        <div class="page-number">2</div>
+                    </div>
+                </div>
+
+                <!-- メッセージページ3 -->
+                <div class="page">
+                    <div class="page-content">
+                        <div class="message-card">
+                            <div class="message-header">
+                                <span class="message-from">差出人：ファン3</span>
+                            </div>
+                            <div class="message-body">
+                                <p>お誕生日おめでとうございます！</p>
+                                <p>素敵な一年になりますように！</p>
+                            </div>
+                            <div class="message-decoration">
+                                <img src="https://via.placeholder.com/200x150/FFD700/FFFFFF?text=Image" alt="装飾">
+                            </div>
+                        </div>
+                        <div class="page-number">3</div>
+                    </div>
+                </div>
+
+                <!-- メッセージページ4 -->
+                <div class="page">
+                    <div class="page-content">
+                        <div class="message-card">
+                            <div class="message-header">
+                                <span class="message-from">差出人：ファン4</span>
+                            </div>
+                            <div class="message-body">
+                                <p>いつも元気をもらっています！</p>
+                                <p>これからも頑張ってください！</p>
+                            </div>
+                            <div class="message-decoration">
+                                <img src="https://via.placeholder.com/200x150/FFA07A/FFFFFF?text=Image" alt="装飾">
+                            </div>
+                        </div>
+                        <div class="page-number">4</div>
+                    </div>
+                </div>
+
+                <!-- メッセージページ5 -->
+                <div class="page">
+                    <div class="page-content">
+                        <div class="message-card">
+                            <div class="message-header">
+                                <span class="message-from">差出人：ファン5</span>
+                            </div>
+                            <div class="message-body">
+                                <p>お誕生日おめでとうございます！</p>
+                                <p>ずっと応援しています！</p>
+                            </div>
+                            <div class="message-decoration">
+                                <img src="https://via.placeholder.com/200x150/DDA0DD/FFFFFF?text=Image" alt="装飾">
+                            </div>
+                        </div>
+                        <div class="page-number">5</div>
+                    </div>
+                </div>
+
+                <!-- メッセージページ6 -->
+                <div class="page">
+                    <div class="page-content">
+                        <div class="message-card">
+                            <div class="message-header">
+                                <span class="message-from">差出人：ファン6</span>
+                            </div>
+                            <div class="message-body">
+                                <p>素敵なお誕生日をお過ごしください！</p>
+                                <p>たくさんの幸せが訪れますように。</p>
+                            </div>
+                            <div class="message-decoration">
+                                <img src="https://via.placeholder.com/200x150/F0E68C/FFFFFF?text=Image" alt="装飾">
+                            </div>
+                        </div>
+                        <div class="page-number">6</div>
+                    </div>
+                </div>
+
+                <!-- 裏表紙 -->
+                <div class="page cover back-cover">
+                    <div class="page-content">
+                        <h3>ありがとうございました</h3>
+                        <p>お誕生日企画2025</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- フッター -->
+    <div id="footer"></div>
+
+    <script src="js/include.js"></script>
+    <script src="js/message-script.js"></script>
+</body>
+</html>
