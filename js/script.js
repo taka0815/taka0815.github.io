@@ -1,19 +1,24 @@
 // ハンバーガーメニューの動作
-const hamburger = document.getElementById('hamburger');
-const nav = document.getElementById('nav');
+// ヘッダーは fetch で非同期に読み込まれるため、document 全体にイベントを委譲する
+document.addEventListener('click', function (e) {
+    // ハンバーガーボタンをクリック
+    const hamburger = e.target.closest('#hamburger');
+    if (hamburger) {
+        const nav = document.getElementById('nav');
+        if (nav) {
+            nav.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+        return;
+    }
 
-hamburger.addEventListener('click', () => {
-    nav.classList.toggle('active');
-    hamburger.classList.toggle('active');
-});
-
-// ナビゲーションリンクをクリックしたらメニューを閉じる
-const navLinks = document.querySelectorAll('.nav a');
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        nav.classList.remove('active');
-        hamburger.classList.remove('active');
-    });
+    // ナビリンクをクリックしたらメニューを閉じる
+    if (e.target.closest('.nav a')) {
+        const nav = document.getElementById('nav');
+        const ham = document.getElementById('hamburger');
+        if (nav) nav.classList.remove('active');
+        if (ham) ham.classList.remove('active');
+    }
 });
 
 // スムーススクロール

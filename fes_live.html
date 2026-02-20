@@ -3,24 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>メッセージ - お誕生日企画2025</title>
-    <link rel="stylesheet" href="css/message-style.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/turn.js/3/turn.min.js"></script>
+    <title>Fes×LIVE アルバム | 蓮ノ空女学院スクールアイドルクラブ 103期生卒業企画</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/album.css">
+    <style>
+        /* fes_live テーマカラー */
+        :root {
+            --album-hero-from:      #667eea;
+            --album-hero-to:        #764ba2;
+            --album-tab-color:      #c084d4;
+            --album-title-color:    #5b3a8e;
+            --album-spine-from:     #a07848;
+            --album-spine-mid:      #c8a060;
+            --album-spine-to:       #b08040;
+            --album-spine-shadow1:  #b8956a;
+            --album-spine-shadow2:  #a07848;
+            --album-book-bg:        #f5ede0;
+            --album-shadow-color:   rgba(80, 50, 20, 0.35);
+            --album-card-shadow:    rgba(80, 50, 20, 0.18);
+            --album-lb-close-hover: #f0e0ff;
+            --album-img-bg:         #e8e0f0;
+        }
+    </style>
 </head>
 <body>
     <!-- ヘッダー -->
     <div id="header"></div>
 
-    <!-- メインコンテンツ -->
-    <main class="main-content">
-        
+    <!-- ページヒーロー -->
+    <section class="page-hero">
+        <div class="container page-hero-content">
+            <h2>✨ Fes×LIVE</h2>
+            <p>輝きのステージ、その瞬間を永遠に</p>
+        </div>
+    </section>
+
+    <!-- アルバム -->
+    <main class="album-page">
+        <div class="container">
+            <div class="album-book" data-album="fes_live">
+                <div class="album-header">
+                    <h3>📸 思い出アルバム</h3>
+                </div>
+
+                <div class="tab-list" role="tablist">
+                    <button class="tab-btn active" role="tab" data-tab="tab-103">103期</button>
+                    <button class="tab-btn" role="tab" data-tab="tab-104">104期</button>
+                    <button class="tab-btn" role="tab" data-tab="tab-105">105期</button>
+                </div>
+
+                <div class="tab-panel active" id="tab-103" role="tabpanel">
+                    <p class="tab-loading">読み込み中...</p>
+                </div>
+                <div class="tab-panel" id="tab-104" role="tabpanel">
+                    <p class="tab-loading">読み込み中...</p>
+                </div>
+                <div class="tab-panel" id="tab-105" role="tabpanel">
+                    <p class="tab-loading">読み込み中...</p>
+                </div>
+            </div>
+        </div>
     </main>
+
+    <!-- ライトボックス -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+        <div class="lightbox-inner">
+            <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+            <img id="lightbox-img" src="" alt="">
+        </div>
+    </div>
 
     <!-- フッター -->
     <div id="footer"></div>
 
     <script src="js/include.js"></script>
-    <script src="js/message-script.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/album.js"></script>
 </body>
 </html>

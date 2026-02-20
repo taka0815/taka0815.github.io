@@ -3,20 +3,167 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>蓮ノ空女学院スクールアイドルクラブ　103期生卒業企画</title>
+    <title>お問い合わせ | 蓮ノ空女学院スクールアイドルクラブ 103期生卒業企画</title>
     <link rel="stylesheet" href="./css/style.css">
+    <style>
+        /* ヒーローバナー */
+        .page-hero {
+            background: linear-gradient(135deg, #f8a4c8 0%, #c084d4 50%, #a78bfa 100%);
+            color: white;
+            padding: 60px 0 50px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Ccircle cx='30' cy='30' r='2' fill='rgba(255,255,255,0.15)'/%3E%3C/svg%3E") repeat;
+        }
+
+        .page-hero-content {
+            position: relative;
+        }
+
+        .page-hero h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.4rem;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+
+        .page-hero p {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        /* メインエリア */
+        .info-page {
+            padding: 64px 0 96px;
+            background: #fdf6fb;
+            min-height: calc(100vh - 200px);
+        }
+
+        /* カードラッパー */
+        .contact-wrapper {
+            max-width: 560px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* 各カード */
+        .contact-card {
+            background: #fff;
+            border-radius: 14px;
+            padding: 24px 28px;
+            box-shadow: 0 4px 20px rgba(200, 130, 210, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.2s, box-shadow 0.2s;
+            border-left: 5px solid #c084d4;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 32px rgba(200, 130, 210, 0.2);
+        }
+
+        .contact-card.mail {
+            border-left-color: #f093fb;
+        }
+
+        /* アイコン枠 */
+        .contact-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            background: linear-gradient(135deg, #c084d4, #a78bfa);
+            color: white;
+        }
+
+        .contact-card.mail .contact-icon {
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+        }
+
+        /* テキスト */
+        .contact-text .label {
+            font-size: 0.78rem;
+            color: #aaa;
+            margin-bottom: 2px;
+        }
+
+        .contact-text .value {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        @media (max-width: 640px) {
+            .page-hero h2 { font-size: 1.7rem; }
+
+            .contact-card {
+                padding: 20px;
+                gap: 16px;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- ヘッダー -->
     <div id="header"></div>
 
-    <h2>お問い合わせはこちらまで</h2>
-    <a href="https://twitter.com/" target="_blank" class="social-link">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-        </svg>
-    </a>
-    <a href="mailto:example@gmail.com">メールでのお問い合わせはこちら</a>
+    <!-- ヒーロー -->
+    <section class="page-hero">
+        <div class="container page-hero-content">
+            <h2>お問い合わせはこちらまで</h2>
+            <p>ご質問・ご意見はお気軽にどうぞ</p>
+        </div>
+    </section>
+
+    <!-- コンタクト -->
+    <main class="info-page">
+        <div class="container">
+            <div class="contact-wrapper">
+
+                <a href="https://twitter.com/" target="_blank" class="contact-card">
+                    <div class="contact-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
+                    </div>
+                    <div class="contact-text">
+                        <div class="label">X (Twitter)</div>
+                        <div class="value">公式アカウントへ</div>
+                    </div>
+                </a>
+
+                <a href="mailto:example@gmail.com" class="contact-card mail">
+                    <div class="contact-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z"/>
+                            <path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z"/>
+                        </svg>
+                    </div>
+                    <div class="contact-text">
+                        <div class="label">メール</div>
+                        <div class="value">メールでのお問い合わせはこちら</div>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </main>
 
     <!-- フッター -->
     <div id="footer"></div>

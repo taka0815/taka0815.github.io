@@ -3,31 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>蓮ノ空女学院スクールアイドルクラブ　103期生卒業企画</title>
-    <link rel="stylesheet" href="./css/message-style.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/turn.js/3/turn.min.js"></script>
+    <title>活動の思い出 | 蓮ノ空女学院スクールアイドルクラブ 103期生卒業企画</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/album.css">
+    <style>
+        /* activity テーマカラー */
+        :root {
+            --album-hero-from:      #43b89c;
+            --album-hero-to:        #2d6a8f;
+            --album-tab-color:      #43b89c;
+            --album-title-color:    #1a6b58;
+            --album-spine-from:     #3a7a5a;
+            --album-spine-mid:      #5aaa7a;
+            --album-spine-to:       #4a9068;
+            --album-spine-shadow1:  #4a9068;
+            --album-spine-shadow2:  #3a7a5a;
+            --album-book-bg:        #f0f9f4;
+            --album-shadow-color:   rgba(20, 70, 40, 0.3);
+            --album-card-shadow:    rgba(20, 70, 40, 0.15);
+            --album-lb-close-hover: #d0f0e0;
+            --album-img-bg:         #d8f0e4;
+        }
+    </style>
 </head>
 <body>
     <!-- ヘッダー -->
     <div id="header"></div>
 
-    <!-- メインコンテンツ -->
-    <main class="main-content">
-        <div class="book-container">
-            <img src="images/a.png" width="500">
-            <img src="images/a.png" width="500">
-            <img src="images/a.png" width="500">
-            <img src="images/a.png" width="500">
-            <img src="images/a.png" width="500">
-            <img src="images/a.png" width="500">
+    <!-- ページヒーロー -->
+    <section class="page-hero">
+        <div class="container page-hero-content">
+            <h2>🌿 活動の思い出</h2>
+            <p>聖地巡礼・コラボ・ライブ・グッズ……すべての記録</p>
+        </div>
+    </section>
+
+    <!-- アルバム -->
+    <main class="album-page">
+        <div class="container">
+            <div class="album-book">
+                <div class="album-header">
+                    <h3>📸 思い出アルバム</h3>
+                </div>
+
+                <div id="album-photos">
+                    <p class="tab-loading">読み込み中...</p>
+                </div>
+            </div>
         </div>
     </main>
+
+    <!-- ライトボックス -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+        <div class="lightbox-inner">
+            <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+            <img id="lightbox-img" src="" alt="">
+        </div>
+    </div>
 
     <!-- フッター -->
     <div id="footer"></div>
 
     <script src="js/include.js"></script>
-    <script src="js/message-script.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/album.js"></script>
+    <script>
+        fetch('./parts/activity/photos.html')
+            .then(function (res) { return res.text(); })
+            .then(function (html) {
+                document.getElementById('album-photos').innerHTML = html;
+            })
+            .catch(function () {
+                document.getElementById('album-photos').innerHTML =
+                    '<p class="tab-loading">画像を読み込めませんでした。</p>';
+            });
+    </script>
 </body>
 </html>
