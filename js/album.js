@@ -25,6 +25,25 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    // サブタブ切り替え（動的ロードされた要素に対してイベント委譲）
+    const albumBookEl = document.querySelector('.album-book');
+    if (albumBookEl) {
+        albumBookEl.addEventListener('click', function (e) {
+            const btn = e.target.closest('.sub-tab-btn');
+            if (!btn) return;
+
+            const target = btn.dataset.subtab;
+            const panel = btn.closest('.tab-panel');
+
+            panel.querySelectorAll('.sub-tab-btn').forEach(function (b) { b.classList.remove('active'); });
+            panel.querySelectorAll('.sub-tab-panel').forEach(function (p) { p.classList.remove('active'); });
+
+            btn.classList.add('active');
+            const targetPanel = document.getElementById(target);
+            if (targetPanel) targetPanel.classList.add('active');
+        });
+    }
+
     // タブ切り替え
     document.querySelectorAll('.tab-btn').forEach(function (btn) {
         btn.addEventListener('click', function () {
