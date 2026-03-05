@@ -230,29 +230,6 @@ body {
 .photo-card:nth-child(5)::before { background: #f7c5d0; transform: translateX(-50%) rotate(-2deg); }
 .photo-card:nth-child(6)::before { background: #c5b8e8; transform: translateX(-50%) rotate(1deg); }
 
-/* キャプション */
-.photo-caption {
-    position: absolute;
-    bottom: 12px;
-    left: 14px;
-    right: 48px;
-    font-size: 0.82rem;
-    color: #666;
-    font-family: 'Yu Gothic', 'Hiragino Sans', sans-serif;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-/* ナンバリング */
-.photo-number {
-    position: absolute;
-    bottom: 12px;
-    right: 14px;
-    font-size: 0.72rem;
-    color: #bbb;
-}
-
 /* ローディング表示 */
 .tab-loading {
     text-align: center;
