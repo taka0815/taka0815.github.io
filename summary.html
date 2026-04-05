@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>企画概要 | 蓮ノ空女学院スクールアイドルクラブ 103期生卒業企画</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <style>
+        /* ページヒーロー */
+        .page-hero {
+            background: linear-gradient(135deg, #f8a4c8 0%, #c084d4 50%, #a78bfa 100%);
+            color: white;
+            padding: 60px 0 50px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Ccircle cx='30' cy='30' r='2' fill='rgba(255,255,255,0.15)'/%3E%3C/svg%3E") repeat;
+        }
+
+        .page-hero-content {
+            position: relative;
+        }
+
+        .page-hero h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+
+        .page-hero p {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        /* メインコンテンツ */
+        .summary-page {
+            padding: 60px 0 80px;
+            background-color: #fdf6fb;
+        }
+
+        /* セクション共通 */
+        .summary-section {
+            background: #fff;
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 32px;
+            box-shadow: 0 4px 20px rgba(200, 130, 210, 0.1);
+            border-left: 5px solid #f093fb;
+            position: relative;
+        }
+
+        .summary-section.green-accent {
+            border-left-color: #6ee7b7;
+        }
+
+        .summary-section.blue-accent {
+            border-left-color: #93c5fd;
+        }
+
+        .summary-section.orange-accent {
+            border-left-color: #fca5a5;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #5b21b6;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* 企画概要テキスト */
+        .summary-text {
+            color: #444;
+            line-height: 2;
+            font-size: 1rem;
+        }
+
+        .summary-text p + p {
+            margin-top: 1em;
+        }
+
+        .summary-text .highlight {
+            color: #be185d;
+            font-weight: 600;
+        }
+
+        /* アップロードボタン */
+        .upload-area {
+            margin-top: 24px;
+            text-align: center;
+        }
+
+        .upload-btn {
+            display: inline-block;
+            padding: 16px 48px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(240, 147, 251, 0.45);
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .upload-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(240, 147, 251, 0.55);
+        }
+
+        /* 募集画像リスト */
+        .recruit-list {
+            list-style: none;
+            margin-top: 0.5rem;
+        }
+
+        .recruit-list li {
+            padding: 10px 0 10px 16px;
+            border-bottom: 1px dashed #e9d5f9;
+            color: #444;
+            font-size: 1rem;
+            line-height: 1.7;
+            position: relative;
+        }
+
+        .recruit-list li::before {
+            content: '✦';
+            position: absolute;
+            left: 0;
+            color: #c084d4;
+            font-size: 0.75rem;
+            top: 13px;
+        }
+
+        .recruit-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* 注意事項 */
+        .notice-list {
+            list-style: none;
+            margin-top: 0.5rem;
+            background: #fff5f5;
+            border: 1px solid #fecaca;
+            border-radius: 8px;
+            padding: 8px 16px;
+        }
+
+        .notice-list li {
+            color: #444;
+            font-size: 0.95rem;
+            line-height: 1.8;
+            padding: 8px 0;
+            border-bottom: 1px dashed #fecaca;
+        }
+
+        .notice-list li:last-child {
+            border-bottom: none;
+        }
+
+        .notice-list li .notice-label {
+            font-weight: 700;
+            color: #dc2626;
+        }
+
+        /* 注意事項ヘッダー */
+        .notice-header {
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            border-radius: 8px;
+            padding: 10px 16px;
+            margin-bottom: 16px;
+            font-size: 0.9rem;
+            color: #991b1b;
+            font-weight: 600;
+        }
+
+        /* アイコン枠 */
+        .contact-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            background: linear-gradient(135deg, #c084d4, #a78bfa);
+            color: white;
+        }
+
+        /* 各カード */
+        .contact-card {
+            background: #fff;
+            border-radius: 14px;
+            padding: 24px 28px;
+            box-shadow: 0 4px 20px rgba(200, 130, 210, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.2s, box-shadow 0.2s;
+            border-left: 5px solid #c084d4;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 32px rgba(200, 130, 210, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .page-hero h2 {
+                font-size: 1.6rem;
+            }
+
+            .summary-section {
+                padding: 24px 20px;
+            }
+
+            .section-title {
+                font-size: 1.2rem;
+            }
+
+            .upload-btn {
+                padding: 14px 32px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ヘッダー -->
+    <div id="header"></div>
+
+    <!-- ページヒーロー -->
+    <section class="page-hero">
+        <div class="container page-hero-content">
+            <h2>蓮ノ三連華 卒業アルバム企画</h2>
+        </div>
+    </section>
+
+    <!-- メインコンテンツ -->
+    <main class="summary-page">
+        <div class="container">
+
+            <!-- 企画概要 -->
+            <div class="summary-section">
+                <h2 class="section-title">企画概要</h2>
+                <div class="summary-text">
+                    <div>
+                        <p>蓮ノ三連華の3人とファンの歩みを記録した画像を集め、オンラインアルバムとして保存する企画です。</p>
+                        <p>完成したアルバムはホームページおよびSNSに公開し、誰でも閲覧できる形で共有いたします。</p>
+                        <p>なお、画像容量の都合上、頂いた画像のごく一部のみをホームページに掲載する可能性がございます。</p>
+                        <p>その場合、別途Google Drive等でより多くの画像が掲載されるアルバムの作成も検討しております。</p>
+                    </div>
+                    <br>
+                    <div>
+                        <h3>収集する画像は以下の通りです。</h3>
+                        <p>①2023年4月〜2026年3月に開催されたFes×LIVEのベストショット</p>
+                        <p>②2023年4月〜2026年3月に配信されたWith×MEETSのベストショット</p>
+                        <p>③その他、2023年4月〜2026年3月に蓮ノ空のこと好き好きクラブのみなさんが撮影した、「蓮ノ空愛」が感じられる写真<br>
+                        (グッズ、聖地巡礼、ライブの写真)</p>
+                    </div>
+                    <br>
+                    <div>
+                        <h3>スケジュールは以下の通りです。</h3><p>（6th Liveや映画公開に向けて準備を進めてまいります）</p>
+                        <p>3/29～4/12　画像募集</p>
+                        <p>4/12～4/29　画像選定・HP掲載</p>
+                        <p>4/30　　　　完成・公開</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 参加方法 -->
+            <div class="summary-section green-accent">
+                <h2 class="section-title">
+                    <span></span>参加方法
+                </h2>
+                <div class="summary-text">
+                <p>【応募期限】3/29~4/12</p>
+                    <p>以下より画像をアップロードしてください。</p>
+                </div>
+                <div class="upload-area">
+                    <a href="https://docs.google.com/forms/d/1ZrZ6ZUZgME8PHkvXvlcpb-SmaUzmExudpR6-SQJ6zdM/edit" class="upload-btn" target="_blank">画像をアップロードする</a>
+                </div>
+            </div>
+
+            <!-- 募集する画像 -->
+            <div class="summary-section blue-accent">
+                <h2 class="section-title">募集する画像</h2>
+                <ul class="recruit-list">
+                    <li>
+                        Fes×LIVEで最高に輝いていた瞬間のスクリーンショット<br>
+                        <a href="fes_live.html" class="upload-btn" style="margin-top:8px;display:inline-block;padding:8px 20px;font-size:0.9rem;">完成イメージ</a>
+                    </li>
+                    <li>
+                        心に刺さったWith×MEETS のワンシーン
+                        （たくさん募集しています！）<br>
+                        <a href="with_meets.html" class="upload-btn" style="margin-top:8px;display:inline-block;padding:8px 20px;font-size:0.9rem;">完成イメージ</a>
+                    </li>
+                    <li>
+                        聖地巡礼、コラボイベント、ライブ、グッズ等の思い出の写真<br>
+                        <a href="activity.html" class="upload-btn" style="margin-top:8px;display:inline-block;padding:8px 20px;font-size:0.9rem;">完成イメージ</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 注意事項 -->
+            <div class="summary-section orange-accent">
+                <h2 class="section-title">注意事項</h2>
+                <p class="notice-header">⚠ 必ずお読みください</p>
+                <ul class="notice-list">
+                    <li>
+                        ・ 個人の顔や個人情報が映り込む画像は送信しないでください。
+                    </li>
+                    <li>
+                        ・ご自身で撮影された画像に限ります。
+                    </li>
+                    <li>
+                        ・聖地巡礼等の画像は、権利面にご配慮ください。
+                    </li>
+                    <li>
+                        ・送信された画像は本企画（HPやその他媒体におけるアルバム作成）での使用に同意されたものとみなします。送信後の削除・修正はできませんので、ご了承ください。
+                    </li>
+                    <li>
+                        ・枚数制限や構成の都合上、ご投稿いただいた画像を採用できない場合がございます。
+                    </li>
+                    <li>
+                        ・画像のサイズを変更、またはトリミングする場合があります。
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 責任者 -->
+            <div class="summary-section">
+                <div class="contact-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
+                </div>
+                <div class="contact-text">
+                    <div class="value">主催：ほわぁ(<a href="https://x.com/howaaLoveLive" target="_blank">@howaaLoveLive</a>)</div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- フッター -->
+    <div id="footer"></div>
+
+    <script src="js/include.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
